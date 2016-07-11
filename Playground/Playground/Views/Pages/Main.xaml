@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:selectors="clr-namespace:Playground.Selectors;assembly=Playground"
+             xmlns:cells="clr-namespace:Playground.Views.Controls;assembly=Playground"
+             x:Class="Playground.Views.Pages.Main">
+  
+  <ListView x:Name="MediaListView" HasUnevenRows="True" ItemsSource="{Binding MediaList}" ItemTemplate="{StaticResource mediaDataTemplateSelector}" />
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <DataTemplate x:Key="BookDataTemplate">
+        <cells:BookCell></cells:BookCell>
+      </DataTemplate>
+      <DataTemplate x:Key="GameDataTemplate">
+        <cells:GameCell></cells:GameCell>
+      </DataTemplate>
+      <DataTemplate x:Key="MovieDataTemplate">
+        <cells:MovieCell></cells:MovieCell>
+      </DataTemplate>
+      <selectors:Media x:Key="mediaDataTemplateSelector"
+          BookTemplate="{StaticResource BookDataTemplate}"
+          GameTemplate="{StaticResource GameDataTemplate}" 
+          MovieTemplate="{StaticResource MovieDataTemplate}" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+</ContentPage>

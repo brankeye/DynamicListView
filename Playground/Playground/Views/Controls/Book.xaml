@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Playground.Views.Controls.Book">
+  <StackLayout>
+    <Label Text="{Binding BookModel.Name}"></Label>
+    <Label Text="{Binding BookModel.Description}"></Label>
+    <Label Text="{Binding BookModel.Author}"></Label>
+  </StackLayout>
+</ContentView>
